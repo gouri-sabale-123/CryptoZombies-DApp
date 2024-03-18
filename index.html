@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <title>CryptoZombies front-end</title>
@@ -84,8 +85,9 @@
     }
 
     .container {
-      width: 80%;
-      /* Adjust width as needed */
+      width: 80%; /* Adjust width as needed */
+      border: 2px solid #000;
+      border-radius: 10px;
       min-height: 400px;
       /* Increased minimum height */
       padding: 20px;
@@ -167,8 +169,8 @@
       /* 10px margin at the bottom */
     }
     .zombie {
-      background-color: #f8f9fa; /* Light gray background */
-      border: 1px solid #ddd; /* Light gray border */
+      background-color: #d0e3ea; /* Light gray background */
+      border: 2px solid #000; /* Light gray border */
       border-radius: 4px; /* Rounded corners */
       padding: 10px; /* Padding around the content */
       margin-bottom: 10px; /* Margin at the bottom */
@@ -201,7 +203,7 @@
       <h1>CryptoCrafters</h1>
     </div>
   </div>
-  <div class="container">
+  <div class="container bg-light">
 
     <div class="buttons-container">
       <button class="createzombieButton">Create Zombie</button>
@@ -237,6 +239,7 @@
     var cryptoZombies;
     var userAccount;
     var changeZombieID = "";
+    var isChangedDNA = false;
     const showZombieButton = document.querySelector('.showZombieButton');
     const createzombieButton = document.querySelector('.createzombieButton');
     const levelupButton = document.querySelector('.levelupButton');
@@ -250,7 +253,7 @@
     function startApp() {
 
       //ZombieOwnership contratc address
-      var cryptoZombiesAddress = "0x9C852dCBa5E84784553844AD99A69450C552b253";
+      var cryptoZombiesAddress = "0xBdcb2F022e2DdCCa6a5e30acC16D9d0cd115F8e3";
 
       cryptoZombies = new web3.eth.Contract(cryptoZombiesABI, cryptoZombiesAddress);
 
@@ -267,8 +270,16 @@
 
         getZombieDetails(id)
           .then(function (zombie) {
+            if (isChangedDNA){
+              var imgTag = '<img id="zombie-logo" src="zombie-dna.png" alt="zombie-logo" style="width:100px;height:100px;">'
+              isChangedDNA = false;
+            }
+            else{
+              var imgTag = '<img id="zombie-logo" src="zombie-logo.png" alt="zombie-logo" style="width:100px;height:100px;">'
+            }
             $("#zombies").append(`<div class="zombie">
                     <ul class="zombie-details">
+                      ${imgTag}
                       <li><strong>Name:</strong> ${zombie.name}</li>
                       <li><strong>DNA:</strong> ${zombie.dna}</li>
                       <li><strong>Level:</strong> ${zombie.level}</li>
@@ -332,6 +343,7 @@
           $("#txStatus").text("Success! DNA of your zombie has been changed!");
           $("#changeZombieDNA").val("");
           $("#zombies").empty();
+          isChangedDNA = true;
           getZombiesByOwner(userAccount).then(displayZombies);
         })
         .on("error", function (error) {
