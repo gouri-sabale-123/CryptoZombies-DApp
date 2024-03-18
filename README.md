@@ -8,7 +8,7 @@
 ## Team members:
 
 1. Gouri Babasaheb Sabale : gourisabale123@csu.fullerton.edu (CWID: 885189761)
-2. Divya Tanwar
+2. Divya Tanwar: divyatanwar@csu.fullerton.edu(CWID: 885207738)
 ## Professor
 
 Prof. Wenlin Han, CSU Fullerton: whan@fullerton.edu
@@ -16,7 +16,7 @@ Prof. Wenlin Han, CSU Fullerton: whan@fullerton.edu
 ## Executed Startup package successfully which included functionalities such as 
 1. Create Zombie
 2. Level Up
-3.Show Zombies
+3. Show Zombies
 
 ## Additional Work
 
