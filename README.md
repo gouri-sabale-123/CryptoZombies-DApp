@@ -1,4 +1,6 @@
-# CPSC 559 - Advance Blockchain Technology
+# CPSC 559 - Advance Blockchain Technologies
+
+# Section - Spring 2024 CPSC 559-01 19688
 
 ## Mid Term Project
 
@@ -21,10 +23,12 @@ Prof. Wenlin Han, CSU Fullerton: whan@fullerton.edu
 ## Additional Work
 
 1. Enhanced user interface of Existing startup package
-2. Added Option to change/customize Zombie Name
-3. Added option to change/customize Zombie DNA
-4. Added function BalanceOf to check the balance of zombie account
-5. Added function OwnerOf to check the ownership of NFT.
+2. Added function to change/customize Zombie Name
+3. Added function to change/customize Zombie DNA
+4. Added function to find owner of the account
+5. Added function to find balance of zombie account
+6. Added images on changing DNA of zombie
+7. Created NFT on marketplace
 
 
 
@@ -77,7 +81,8 @@ git clone repo_url
 	 
 	 Start the application on http://localhost:8080
 	 
-## 8.Connect your metamask account to this website http://localhost:8080
+## 8.Connect your metamask account to this website
+     http://localhost:8080
 
 ## 9.Test all the functions
 	   
